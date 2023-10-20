@@ -29,15 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="500dp"
             android:src="@drawable/nesthub_logo" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Get your Nest"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="@color/white"
-            android:textSize="32dp"/>
     </LinearLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -136,6 +127,7 @@
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:textSize="16sp"
                 android:text="Login"
                 android:textStyle="bold"
                 app:cornerRadius="5dp"/>
@@ -170,6 +162,7 @@
                 android:orientation="horizontal"
                 android:gravity="center">
                 <ImageView
+                    android:id="@+id/btnGoogleAuth"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="12dp"

@@ -26,7 +26,7 @@ public class Register extends AppCompatActivity {
     Button buttonReg;
 
     FirebaseAuth mAuth;
-    ProgressBar progressBar;
+//    ProgressBar progressBar;
     TextView textView;
 
     FirebaseDatabase database;
@@ -96,7 +96,7 @@ public class Register extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
                                             Toast.makeText(Register.this, "Register Successful", Toast.LENGTH_LONG).show();
-                                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                             startActivity(intent);
                                             finish();
                                         }

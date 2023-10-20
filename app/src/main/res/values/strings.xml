@@ -6,4 +6,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_bottom_nav">bottom_nav</string>
     <string name="title_activity_nav_b">nav_b</string>
+    <string name="default_web_client_id" translatable="false">859960698323-td64u0v4ill3k4lsa66pbkeiei1ogc4o.apps.googleusercontent.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -13,7 +13,20 @@
           "package_name": "com.example.nesthub"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "859960698323-erjale4mfg6sdpf9oopouo80hmlh4rcd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nesthub",
+            "certificate_hash": "db137952aa9db4cf48ff12e092729b5f1b46760d"
+          }
+        },
+        {
+          "client_id": "859960698323-td64u0v4ill3k4lsa66pbkeiei1ogc4o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDXHsUsWzWxwKdsE8zI3CkY5115fSSVjcI"
@@ -21,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859960698323-edij0h7iu81pk49gklanrm9f99gn4tue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

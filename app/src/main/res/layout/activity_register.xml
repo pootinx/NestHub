@@ -11,10 +11,8 @@
     <View
         android:id="@+id/view5"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/waves"
-        app:layout_constraintEnd_toEnOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="120dp"
+        android:background="@drawable/wave2"/>
 
 
     <TextView
@@ -23,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:text="Create an account"
+        android:text="Create an account !"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
