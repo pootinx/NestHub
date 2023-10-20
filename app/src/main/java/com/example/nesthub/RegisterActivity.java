@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     TextInputEditText editTextEmail, editTextPassword,editTextFullname,editTextNumber;
     Button buttonReg;
@@ -53,7 +52,7 @@ public class Register extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -95,7 +94,7 @@ public class Register extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
-                                            Toast.makeText(Register.this, "Register Successful", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(RegisterActivity.this, "RegisterActivity Successful", Toast.LENGTH_LONG).show();
                                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                             startActivity(intent);
                                             finish();
@@ -107,7 +106,7 @@ public class Register extends AppCompatActivity {
 
 
                             }else{
-                                Toast.makeText(Register.this, "Register Field", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterActivity.this, "RegisterActivity Field", Toast.LENGTH_LONG).show();
                             }
                         }
                     });

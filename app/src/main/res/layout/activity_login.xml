@@ -7,7 +7,7 @@
 
     android:background="@drawable/welcome"
 
-    tools:context=".Login">
+    tools:context=".LoginActivity">
 
 
     <RelativeLayout

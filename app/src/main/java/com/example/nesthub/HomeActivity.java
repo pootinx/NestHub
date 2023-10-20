@@ -18,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser == null){
-            Intent intent = new Intent(HomeActivity.this, Login.class);
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         }
@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(HomeActivity.this, Login.class);
+        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
