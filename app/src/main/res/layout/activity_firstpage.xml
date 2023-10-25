@@ -52,9 +52,9 @@
         android:text="Unlock your dream home with NestHub
 
          where comfort meets convenience!"
-        android:textColor="@color/blackgray"
+        android:textColor="@color/blackgrey"
         android:fontFamily="sans-serif"
-        android:alpha="0.5"
+        android:alpha="0.6"
         android:textSize="18sp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
