@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
                 replaceFragment(new ProfileFragment());
 
+            }else if (id==R.id.explore) {
+
+                replaceFragment(new ExploreFragment());
+
             }
 
 
