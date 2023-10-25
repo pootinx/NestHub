@@ -4,6 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="my_primary">#003580</color>
     <color name="my_secondary">#003580</color>
-    <color name="grey">#414141</color>
-
+    <color name="grey">#EBEBEB</color>
+    <color name="blackgrey">#FF000000</color>
 </resources>

@@ -133,13 +133,12 @@
                 app:cornerRadius="5dp"/>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_signup"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 app:strokeColor="@color/my_primary"
                 app:strokeWidth="1dp"
-                android:id="@+id/btn_create"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:onClick="registerEvent"
                 android:text="Create an account!"
                 android:textStyle="bold"
                 app:cornerRadius="5dp" />
