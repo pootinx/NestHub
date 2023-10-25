@@ -46,7 +46,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx:22.1.2")
     implementation("com.google.firebase:firebase-auth:22.1.2")
 
-
+    implementation ("com.airbnb.android:lottie:5.2.0")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database-ktx:20.2.2")
     implementation("com.google.firebase:firebase-database:20.2.2")

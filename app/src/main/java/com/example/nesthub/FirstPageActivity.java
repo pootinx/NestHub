@@ -17,8 +17,8 @@ public class FirstPageActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser == null){
-            Intent intent = new Intent(FirstPageActivity.this, LoginActivity.class);
+        if(currentUser != null){
+            Intent intent = new Intent(FirstPageActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }

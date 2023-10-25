@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
     GoogleSignInOptions gso;
     ImageView BtnGoogle ;
+    com.google.android.material.button.MaterialButton buttonreg ;
 
     int RC_SIGN_IN = 20;
     @Override
@@ -46,6 +47,16 @@ public class LoginActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
         buttonlogin = findViewById(R.id.btn_login);
+        buttonreg = findViewById(R.id.btn_signup);
+
+        buttonreg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 //        progressBar = findViewById(R.id.progressBar);
 
         buttonlogin.setOnClickListener(new View.OnClickListener() {
@@ -87,9 +98,5 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public void registerEvent(View view){
-        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 }
