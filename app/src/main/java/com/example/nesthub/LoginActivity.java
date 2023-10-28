@@ -71,18 +71,18 @@ public class LoginActivity extends AppCompatActivity {
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     editTextEmail.setError("Invalid Email");
                 } else if (password.length() < 8) {
-                    editTextPassword.setError("Invalid Password");
+                    editTextPassword.setError("Invalid Password enter 8 character or more ");
                 }else {
                     mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this, "LoginActivity successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }else{
-                                Toast.makeText(LoginActivity.this, "LoginActivity Field", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this, "Login Field", Toast.LENGTH_LONG).show();
                             }
                         }
                     });
