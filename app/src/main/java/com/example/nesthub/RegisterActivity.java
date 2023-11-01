@@ -74,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
                     editTextPassword.setError("Please enter your Password");
                     editTextNumber.setError("Please enter your Number");
                 } else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    editTextEmail.setError("Invalid Email");
+                    editTextEmail.setError("Use email like exemple@vwxyz.ex");
                 } else if(name.length() > 20){
                     editTextEmail.setError("Invalid Name");
                 } else if (number.length() != 10 ) {

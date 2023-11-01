@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    editTextEmail.setError("Invalid Email");
+                    editTextEmail.setError("Use email like exemple@vwxyz.ex");
                 } else if (password.length() < 8) {
                     editTextPassword.setError("Invalid Password enter 8 character or more ");
                 }else {
@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }else{
-                                Toast.makeText(LoginActivity.this, "Login Field", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this, "Ther is no account with thin email", Toast.LENGTH_LONG).show();
                             }
                         }
                     });

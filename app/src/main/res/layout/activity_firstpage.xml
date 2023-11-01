@@ -30,7 +30,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Find Your Nest"
+        android:text="From East to West\n Find Your Nest"
+        android:gravity="center"
         android:textStyle="bold"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/my_primary"
@@ -49,7 +50,7 @@
         android:layout_centerHorizontal="true"
 
         android:layout_marginTop="20dp"
-        android:text="Unlock your dream home with NestHub
+        android:text="Unlock your dream house with NestHub
 
          where comfort meets convenience!"
         android:textColor="@color/blackgrey"
@@ -69,8 +70,8 @@
         android:textStyle="bold"
         android:layout_marginTop="40dp"
         android:drawableRight="@drawable/rightarrow"
-        android:paddingHorizontal="32dp"
-        android:paddingVertical="14dp"
+        android:paddingHorizontal="60dp"
+        android:paddingVertical="11dp"
         android:text="Get Started "
         android:textSize="18sp"
         app:cornerRadius="13dp"
