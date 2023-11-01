@@ -65,8 +65,9 @@
                                                     android:id="@+id/homeimgcat"
                                                     android:layout_width="50dp"
                                                     android:layout_height="match_parent"
-                                                    android:layout_marginEnd="8dp"
+
                                                     android:src="@drawable/cat_1"
+                                                    android:layout_marginEnd="8dp"
                                                     app:layout_constraintEnd_toEndOf="parent"
                                                     tools:layout_editor_absoluteY="0dp"
                                                     app:layout_constraintLeft_toLeftOf="parent"
