@@ -93,7 +93,7 @@
 
 
           <TextView
-              android:id="@+id/titele"
+              android:id="@+id/title"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Villa with 2 flours"
@@ -119,10 +119,18 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:textStyle="bold"
-                  android:text="1500 MAD" />
+                  android:text="1500" />
 
               <TextView
-                  android:id="@+id/perday"
+                  android:layout_marginLeft="5dp"
+                  android:id="@+id/currency"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textStyle="bold"
+                  android:text="MAD" />
+
+              <TextView
+                  android:id="@+id/duration"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_marginLeft="5dp"
