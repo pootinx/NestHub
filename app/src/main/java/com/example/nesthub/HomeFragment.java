@@ -35,29 +35,31 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        ff = FirebaseFirestore.getInstance(); // Initialize Firestore
 
-//        poprecycle = view.findViewById(R.id.popitems);
-//        poprecycle.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
-//        houseModelList = new ArrayList<>();
-//        houseAdapter = new HouseAdapter(getContext(), houseModelList);
-//        poprecycle.setAdapter(houseAdapter);
-//
-//        ff.collection("popular")
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            for (QueryDocumentSnapshot firestoreHouse : task.getResult()) {
-//                                HouseModel house = firestoreHouse.toObject(HouseModel.class);
-//                                houseModelList.add(house);
-//                                houseAdapter.notifyDataSetChanged();
-//                            }
-//                        } else {
-//                            Toast.makeText(getContext(), "Error ", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
+
+        poprecycle = view.findViewById(R.id.popitems);
+        poprecycle.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
+        houseModelList = new ArrayList<>();
+        houseAdapter = new HouseAdapter(getContext(), houseModelList);
+        poprecycle.setAdapter(houseAdapter);
+
+        ff.collection("popular")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                HouseModel house = document.toObject(HouseModel.class);
+                                houseModelList.add(house);
+                                houseAdapter.notifyDataSetChanged();
+                            }
+                        } else {
+                            Toast.makeText(getContext(), "Error ", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
         return view;
     }
 }
