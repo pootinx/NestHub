@@ -119,6 +119,8 @@
 
                                         <androidx.constraintlayout.widget.ConstraintLayout
                                             android:id="@+id/homecat"
+                                            android:clickable="true"
+                                            android:foreground="?attr/selectableItemBackground"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_marginStart="32dp"
@@ -156,6 +158,8 @@
                                         <androidx.constraintlayout.widget.ConstraintLayout
                                             android:id="@+id/villacat"
                                             android:layout_width="0dp"
+                                            android:clickable="true"
+                                            android:foreground="?attr/selectableItemBackground"
                                             android:layout_height="wrap_content"
                                             android:layout_marginStart="8dp"
                                             android:layout_marginEnd="32dp"
@@ -234,7 +238,7 @@
                                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                                         <androidx.constraintlayout.widget.ConstraintLayout
-                                            android:id="@+id/Chambercat"
+                                            android:id="@+id/Roomcat"
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
@@ -244,7 +248,7 @@
 
                                                 <ImageView
 
-                                                    android:id="@+id/imgChambercat"
+                                                    android:id="@+id/imgRoomcat"
                                                     android:layout_width="50dp"
                                                     android:layout_height="match_parent"
                                                     android:layout_marginEnd="8dp"
@@ -257,8 +261,8 @@
                                                     />
 
                                                 <TextView
-                                                    android:id="@+id/textChambercat"
-                                                    android:text="Chamber"
+                                                    android:id="@+id/textRoomcat"
+                                                    android:text="Room"
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_marginStart="16dp"
@@ -277,11 +281,31 @@
                             android:orientation="vertical"
                             android:layout_margin="10dp"
                             >
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Popular"
-                                    />
+                                    android:orientation="horizontal"
+                                    android:weightSum="3"
+                                        >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Recommended"
+                                            android:textStyle="bold"
+                                            android:layout_weight="2"
+                                            />
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="View all"
+                                            android:clickable="true"
+                                            android:textAlignment="viewEnd"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/my_primary"
+                                            android:layout_weight="1"
+                                            />
+                                </LinearLayout>
+
                                 <androidx.recyclerview.widget.RecyclerView
                                     android:id="@+id/popitems"
                                     android:layout_width="match_parent"
