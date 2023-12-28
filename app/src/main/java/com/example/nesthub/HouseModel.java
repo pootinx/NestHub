@@ -1,50 +1,30 @@
 package com.example.nesthub;
 
 public class HouseModel {
-    String disponible ,duration,image,localisation,price,title;
+    String title,price,availability,available,category,currency,description,duration,location,url_image;
 
     public HouseModel() {
     }
 
-    public HouseModel(String disponible, String duration, String image, String localisation, String price, String title) {
-        this.disponible = disponible;
-        this.duration = duration;
-        this.image = image;
-        this.localisation = localisation;
-        this.price = price;
+    public HouseModel(String title, String price, String availability, String available, String category, String currency, String description, String duration, String location, String url_image) {
         this.title = title;
-    }
-
-    public String getDisponible() {
-        return disponible;
-    }
-
-    public void setDisponible(String disponible) {
-        this.disponible = disponible;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
+        this.price = price;
+        this.availability = availability;
+        this.available = available;
+        this.category = category;
+        this.currency = currency;
+        this.description = description;
         this.duration = duration;
+        this.location = location;
+        this.url_image = url_image;
     }
 
-    public String getImage() {
-        return image;
+    public String getTitle() {
+        return title;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getLocalisation() {
-        return localisation;
-    }
-
-    public void setLocalisation(String localisation) {
-        this.localisation = localisation;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getPrice() {
@@ -55,11 +35,69 @@ public class HouseModel {
         this.price = price;
     }
 
-    public String getTitle() {
-        return title;
+    public String getAvailability() {
+        return availability;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    public String getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(String available) {
+        this.available = available;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getUrl_image() {
+        return url_image;
+    }
+
+    public void setUrl_image(String url_image) {
+        this.url_image = url_image;
     }
 }
+
+

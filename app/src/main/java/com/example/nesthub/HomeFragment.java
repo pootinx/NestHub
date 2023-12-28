@@ -1,8 +1,10 @@
 package com.example.nesthub;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +31,7 @@ public class HomeFragment extends Fragment {
     RecyclerView poprecycle;
     List<HouseModel> houseModelList;
     HouseAdapter houseAdapter;
+    ConstraintLayout home,villa;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +39,28 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ff = FirebaseFirestore.getInstance(); // Initialize Firestore
+
+        home = view.findViewById(R.id.homecat);
+        villa = view.findViewById(R.id.villacat);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getContext(), CategoryActivity.class);
+                intent.putExtra("cat", "Home");
+            }
+        });
+
+        villa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getContext(), CategoryActivity.class);
+                intent.putExtra("cat", "Home");
+            }
+        });
+
 
 
         poprecycle = view.findViewById(R.id.popitems);

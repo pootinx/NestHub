@@ -31,12 +31,12 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull HouseAdapter.ViewHolder holder, int position) {
-        Glide.with(context).load(houselist.get(position).getImage()).into(holder.imageView);
+        Glide.with(context).load(houselist.get(position).getUrl_image()).into(holder.imageView);
         holder.title.setText(houselist.get(position).getTitle());
         holder.price.setText(houselist.get(position).getPrice());
-        holder.disponible.setText(houselist.get(position).getDisponible());
+        holder.disponible.setText(houselist.get(position).getAvailability());
         holder.duration.setText(houselist.get(position).getDuration());
-        holder.localisation.setText(houselist.get(position).getLocalisation());
+        holder.localisation.setText(houselist.get(position).getLocation());
     }
 
     @Override
