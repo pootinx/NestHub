@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="16dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="16dp">
 
 
@@ -23,16 +25,18 @@
 
 
       <androidx.constraintlayout.widget.ConstraintLayout
+
           android:layout_width="200dp"
           android:layout_height="200dp"
           app:layout_constraintTop_toTopOf="parent"
           >
 
           <ImageView
-              android:id="@+id/imagecard"
+              android:id="@+id/url_image"
               android:layout_width="200dp"
               android:layout_height="200dp"
               android:src="@drawable/housecard"
+              android:scaleType="centerCrop"
               app:layout_constraintBottom_toBottomOf="parent"
               app:layout_constraintTop_toTopOf="parent"
               app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +48,7 @@
               app:layout_constraintBottom_toBottomOf="parent">
 
               <TextView
-                  android:id="@+id/localisation"
+                  android:id="@+id/location"
                   android:layout_width="200dp"
                   android:layout_height="wrap_content"
                   android:background="@drawable/gradiant"
@@ -101,7 +105,7 @@
               android:textStyle="bold"
               android:layout_marginBottom="5dp"/>
           <TextView
-              android:id="@+id/disponible"
+              android:id="@+id/availability"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Feb 23 - 28"
@@ -131,12 +135,19 @@
                   android:text="MAD" />
 
               <TextView
+                  android:id="@+id/per"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="5dp"
+                  android:alpha="1"
+                  android:text="per" />
+              <TextView
                   android:id="@+id/duration"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_marginLeft="5dp"
                   android:alpha="1"
-                  android:text="per day" />
+                  android:text="Day" />
 
 
           </LinearLayout>

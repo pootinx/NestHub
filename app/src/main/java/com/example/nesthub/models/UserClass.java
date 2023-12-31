@@ -1,4 +1,4 @@
-package com.example.nesthub;
+package com.example.nesthub.models;
 
 public class UserClass {
     String fullName, number;

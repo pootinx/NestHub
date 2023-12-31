@@ -1,22 +1,24 @@
-package com.example.nesthub;
+package com.example.nesthub.models;
 
 public class HouseModel {
-    String title,price,availability,available,category,currency,description,duration,location,url_image;
+    String title,availability,category,currency,description,duration,location,url_image;
+    String price;
+    Boolean available;
 
     public HouseModel() {
     }
 
-    public HouseModel(String title, String price, String availability, String available, String category, String currency, String description, String duration, String location, String url_image) {
+    public HouseModel(String title, String availability, String category, String currency, String description, String duration, String location, String url_image, String price, Boolean available) {
         this.title = title;
-        this.price = price;
         this.availability = availability;
-        this.available = available;
         this.category = category;
         this.currency = currency;
         this.description = description;
         this.duration = duration;
         this.location = location;
         this.url_image = url_image;
+        this.price = price;
+        this.available = available;
     }
 
     public String getTitle() {
@@ -27,28 +29,12 @@ public class HouseModel {
         this.title = title;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
     public String getAvailability() {
         return availability;
     }
 
     public void setAvailability(String availability) {
         this.availability = availability;
-    }
-
-    public String getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(String available) {
-        this.available = available;
     }
 
     public String getCategory() {
@@ -97,6 +83,22 @@ public class HouseModel {
 
     public void setUrl_image(String url_image) {
         this.url_image = url_image;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String  price) {
+        this.price = price;
+    }
+
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 }
 

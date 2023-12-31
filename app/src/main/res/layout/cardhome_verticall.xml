@@ -33,6 +33,7 @@
                     android:id="@+id/imagecard"
                     android:layout_width="400dp"
                     android:layout_height="400dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/housecard"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +41,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardclick"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
 
 
                     app:layout_constraintBottom_toBottomOf="parent">
@@ -54,7 +58,7 @@
                         >
 
                         <TextView
-                            android:id="@+id/price"
+                            android:id="@+id/title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
@@ -67,7 +71,7 @@
 
 
                         <TextView
-                            android:id="@+id/titele"
+                            android:id="@+id/location"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Morocco, Béni Mellal"
@@ -105,11 +109,6 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
                 <ImageView
                     android:id="@+id/favoriteBackground"
                     android:layout_width="45dp"
@@ -135,14 +134,15 @@
                     />
 
                 <TextView
-                    android:id="@+id/pricehome"
+                    android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:layout_margin="10dp"
                     android:text="1500$"
-                    android:textColor="@color/blackgrey"
-                    android:background="@drawable/radius"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/raduis_blue"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     />

@@ -1,4 +1,4 @@
-package com.example.nesthub;
+package com.example.nesthub.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.nesthub.MainActivity;
+import com.example.nesthub.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

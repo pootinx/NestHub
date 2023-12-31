@@ -9,7 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.nesthub.activities.LoginActivity;
 import com.example.nesthub.databinding.ActivityMainBinding;
+import com.example.nesthub.fragments.ExploreFragment;
+import com.example.nesthub.fragments.FavoriteFragment;
+import com.example.nesthub.fragments.HomeFragment;
+import com.example.nesthub.fragments.ProfileFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
