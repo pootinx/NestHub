@@ -30,14 +30,14 @@ public class DetailsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String titleValue, priceValue, durationValue, locationValue, descriptionValue, availabilityValue, urlImageValue;
+            String titleValue, priceValue, durationValue, locationValue, descriptionValue, availabilityValue, url_imageValue;
             titleValue = extras.getString("title");
             priceValue = extras.getString("price");
             durationValue = extras.getString("duration");
             locationValue = extras.getString("location");
             availabilityValue = extras.getString("availability");
             descriptionValue = extras.getString("description");
-            urlImageValue = extras.getString("url_image");
+            url_imageValue = extras.getString("url_image");
 
             // Set the values to the corresponding TextViews
             title.setText(titleValue);
@@ -48,7 +48,7 @@ public class DetailsActivity extends AppCompatActivity {
             availability.setText(availabilityValue);
 
             // Load the image using Glide
-            Glide.with(this).load(urlImageValue).into(url_image);
+            Glide.with(this).load(url_imageValue).into(url_image);
         }
 
         // Set up click listener for the back button

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nesthub.activities.CategoryActivity;
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment {
     private List<HouseModel> houseModelList;
     private HouseAdapter houseAdapter;
     private ConstraintLayout home, villa, office, room;
+    TextView viewall;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,6 +49,14 @@ public class HomeFragment extends Fragment {
         villa = view.findViewById(R.id.villacat);
         office = view.findViewById(R.id.officecat);
         room = view.findViewById(R.id.Roomcat);
+        viewall = view.findViewById(R.id.viewall);
+
+        viewall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startCategoryActivity("Recommanded");
+            }
+        });
 
         // Set up click listeners for categories
         home.setOnClickListener(new View.OnClickListener() {

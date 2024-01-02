@@ -283,13 +283,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:layout_margin="10dp"
                             >
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
                                     android:weightSum="3"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginTop="10dp"
                                         >
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -299,6 +301,7 @@
                                             android:layout_weight="2"
                                             />
                                         <TextView
+                                            android:id="@+id/viewall"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="View all"
@@ -313,7 +316,11 @@
                                 <androidx.recyclerview.widget.RecyclerView
                                     android:id="@+id/popitems"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
+                                    android:layout_height="wrap_content"
+                                    tools:listitem="@layout/cardhomesmall"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    android:orientation="horizontal"
+                                    android:layout_marginBottom="16dp"/>
 
                         </LinearLayout>
                 </LinearLayout>

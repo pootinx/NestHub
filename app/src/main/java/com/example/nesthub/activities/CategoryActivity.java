@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nesthub.R;
@@ -27,6 +28,7 @@ public class CategoryActivity extends AppCompatActivity {
     RecyclerView poprecycle;
     List<HouseModel> houseModelList;
     CatAdapter catAdapter;
+    TextView titlecat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,32 +42,55 @@ public class CategoryActivity extends AppCompatActivity {
         houseModelList = new ArrayList<>();
         catAdapter = new CatAdapter(getApplicationContext(), houseModelList);
         poprecycle.setAdapter(catAdapter);
+        titlecat = findViewById(R.id.titlecat);
 
 
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             String category = extras.getString("cat");
+            titlecat.setText(category);
 
+            if (category.equals("Recommanded")){
 
-            Query query = ff.collection("Nests").whereEqualTo("category", category);
-
-            query
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    HouseModel house = document.toObject(HouseModel.class);
-                                    houseModelList.add(house);
-                                    catAdapter.notifyDataSetChanged();
+                ff.collection("popular")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        HouseModel house = document.toObject(HouseModel.class);
+                                        houseModelList.add(house);
+                                        catAdapter.notifyDataSetChanged();
+                                    }
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Error ", Toast.LENGTH_SHORT).show();
                                 }
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Error ", Toast.LENGTH_SHORT).show();
                             }
-                        }
-                    });
+                        });
+
+            }else {
+
+                Query query = ff.collection("Nests").whereEqualTo("category", category);
+
+                query
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        HouseModel house = document.toObject(HouseModel.class);
+                                        houseModelList.add(house);
+                                        catAdapter.notifyDataSetChanged();
+                                    }
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Error ", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+            }
 
         }
 

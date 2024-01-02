@@ -1,6 +1,7 @@
 package com.example.nesthub.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,7 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         HouseModel house = houseList.get(position);
 
-        Glide.with(context).load(house.getUrl_image()).into(holder.urlImage);
+        Glide.with(context).load(house.getUrl_image()).into(holder.url_image);
         holder.title.setText(house.getTitle());
         holder.price.setText(house.getPrice() + " MAD");
         holder.availability.setText(house.getAvailability());
@@ -59,15 +60,15 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder> 
         return houseList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView availability, duration, location, price, title;
-        ImageView urlImage;
+        ImageView url_image;
         ConstraintLayout cardClick;
 
         public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
-            urlImage = itemView.findViewById(R.id.url_image);
+            url_image = itemView.findViewById(R.id.url_image);
             availability = itemView.findViewById(R.id.availability);
             duration = itemView.findViewById(R.id.duration);
             location = itemView.findViewById(R.id.location);
@@ -81,7 +82,19 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder> 
                     if (listener != null) {
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
-                            listener.onItemClick(position);
+                            HouseModel clickedItem = houseList.get(position);
+
+                            Intent intent = new Intent(context, DetailsActivity.class);
+                            intent.putExtra("title", clickedItem.getTitle());
+                            intent.putExtra("price", clickedItem.getPrice() + " MAD");
+                            intent.putExtra("availability", clickedItem.getAvailability());
+                            intent.putExtra("duration", clickedItem.getDuration());
+                            intent.putExtra("location", clickedItem.getLocation());
+                            intent.putExtra("url_image", clickedItem.getUrl_image());
+                            intent.putExtra("description", clickedItem.getDescription());
+
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
                         }
                     }
                 }
