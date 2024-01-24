@@ -20,7 +20,11 @@
             android:layout_height="160dp"
             android:background="@drawable/tophome"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+
 
 
         <LinearLayout
