@@ -49,7 +49,7 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder> 
 
         Glide.with(context).load(house.getUrl_image()).into(holder.url_image);
         holder.title.setText(house.getTitle());
-        holder.price.setText(house.getPrice() + " MAD");
+        holder.price.setText(house.getPrice());
         holder.availability.setText(house.getAvailability());
         holder.duration.setText(house.getDuration());
         holder.location.setText(house.getLocation());

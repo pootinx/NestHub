@@ -26,7 +26,7 @@
                                 <View
                                     android:id="@+id/view5"
                                     android:layout_width="match_parent"
-                                    android:layout_height="165dp"
+                                    android:layout_height="250dp"
                                     android:background="@drawable/tophome"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,7 @@
                                             android:padding="2dp">
 
                                                 <ImageView
-                                                    android:layout_width="50dp"
+                                                    android:layout_width="40dp"
                                                     android:layout_height="match_parent"
 
                                                     android:src="@drawable/nesthub_logo"
@@ -63,7 +63,7 @@
                                                     android:alpha="1"
                                                     android:text="NestHub"
                                                     android:textColor="@color/white"
-                                                    android:textSize="25dp"
+                                                    android:textSize="22dp"
                                                     android:textStyle="bold"
                                                     android:gravity="center_vertical"
                                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -72,9 +72,18 @@
 
 
                                                     />
-
-
                                         </LinearLayout>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="16dp"
+                                            android:text="Let's Find your perfect property Now !"
+                                            android:textColor="@color/white"
+                                            android:textSize="25dp"
+                                            android:textStyle="bold"
+                                            android:layout_marginStart="20dp"
+                                            />
+
 
                                         <EditText
                                             android:id="@+id/editTextText2"
@@ -84,12 +93,12 @@
                                             android:inputType="text"
                                             android:hint="Searching for..."
                                             android:padding="10dp"
-                                            android:paddingLeft="20dp"
+                                            android:paddingLeft="30dp"
                                             android:background="@drawable/radius"
                                             android:drawableRight="@drawable/searche_icon1"
-                                            android:layout_marginStart="30dp"
-                                            android:layout_marginTop="30dp"
-                                            android:layout_marginEnd="30dp"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_marginTop="20dp"
+                                            android:layout_marginEnd="20dp"
                                             android:layout_weight="0.5"
                                             />
 
@@ -130,11 +139,11 @@
 
                                                 <ImageView
                                                     android:id="@+id/homeimgcat"
-                                                    android:layout_width="50dp"
+                                                    android:layout_width="40dp"
                                                     android:layout_height="match_parent"
 
-                                                    android:src="@drawable/cat_1"
-                                                    android:layout_marginEnd="8dp"
+                                                    android:src="@drawable/hm"
+                                                    android:layout_marginEnd="20dp"
                                                     app:layout_constraintEnd_toEndOf="parent"
                                                     tools:layout_editor_absoluteY="0dp"
                                                     app:layout_constraintLeft_toLeftOf="parent"
@@ -168,10 +177,10 @@
 
                                                 <ImageView
                                                     android:id="@+id/imagvillacat"
-                                                    android:layout_width="50dp"
+                                                    android:layout_width="40dp"
                                                     android:layout_height="match_parent"
-                                                    android:layout_marginEnd="8dp"
-                                                    android:src="@drawable/cat_2"
+                                                    android:layout_marginEnd="20dp"
+                                                    android:src="@drawable/vill"
                                                     app:layout_constraintEnd_toEndOf="parent"
                                                     tools:layout_editor_absoluteY="0dp"
                                                     app:layout_constraintLeft_toLeftOf="parent"
@@ -215,10 +224,10 @@
 
                                                 <ImageView
                                                     android:id="@+id/imgofficecat"
-                                                    android:layout_width="50dp"
+                                                    android:layout_width="40dp"
                                                     android:layout_height="match_parent"
-                                                    android:layout_marginEnd="8dp"
-                                                    android:src="@drawable/cat_3"
+                                                    android:layout_marginEnd="20dp"
+                                                    android:src="@drawable/off"
                                                     app:layout_constraintEnd_toEndOf="parent"
                                                     tools:layout_editor_absoluteY="0dp"
                                                     app:layout_constraintLeft_toLeftOf="parent"
@@ -253,10 +262,10 @@
                                                 <ImageView
 
                                                     android:id="@+id/imgRoomcat"
-                                                    android:layout_width="50dp"
+                                                    android:layout_width="40dp"
                                                     android:layout_height="match_parent"
-                                                    android:layout_marginEnd="8dp"
-                                                    android:src="@drawable/cat_4"
+                                                    android:layout_marginEnd="20dp"
+                                                    android:src="@drawable/bd"
                                                     app:layout_constraintEnd_toEndOf="parent"
                                                     tools:layout_editor_absoluteY="0dp"
                                                     app:layout_constraintLeft_toLeftOf="parent"

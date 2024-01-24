@@ -13,13 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <View
             android:id="@+id/view5"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="160dp"
             android:background="@drawable/tophome"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,6 +65,52 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:padding="2dp">
+                <EditText
+                    android:id="@+id/location_search"
+                    android:layout_width="160dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:hint="Location"
+                    android:padding="10dp"
+                    android:paddingLeft="30dp"
+                    android:background="@drawable/radius"
+                    android:drawableRight="@drawable/location"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.5"
+                    />
+                <EditText
+                    android:id="@+id/price_searche"
+                    android:layout_width="160dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:hint="Price"
+                    android:padding="10dp"
+                    android:paddingLeft="30dp"
+                    android:background="@drawable/radius"
+                    android:drawableRight="@drawable/money"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.5"
+                    />
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
