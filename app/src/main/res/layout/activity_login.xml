@@ -1,179 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".LoginActivity">
 
-    android:background="@drawable/welcome"
-
-    tools:context=".activities.LoginActivity">
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/blue_bkg"
-        android:alpha="1"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="28dp"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="500dp"
-            android:src="@drawable/nesthub_logo" />
-    </LinearLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:cardCornerRadius="28dp"
-        android:layout_marginBottom="-20dp"
-        tools:ignore="MissingConstraints"
-        android:id="@+id/card_view"
+        android:layout_margin="50dp"
+        android:backgroundTint="#F1F1F1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="10dp"
         >
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="28dp">
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Find your Nest"
-                android:textColor="@color/my_primary"
-                android:textSize="32sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:text="Plaise Login with your information"
-
-                />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="30dp" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                app:startIconDrawable="@drawable/email_icon"
+            <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alpha="0.7"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email"
-                    android:hint="Enter your email"
-                    android:inputType="textEmailAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Email"/>
 
-                </com.google.android.material.textfield.TextInputEditText>
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                app:passwordToggleEnabled="true"
-                app:startIconDrawable="@drawable/lock_icon"
+            <EditText
+                android:id="@+id/passwprd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alpha="0.7"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password"
-                    android:hint="Enter your password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    >
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="50dp"
+                android:inputType="textPassword"
+                android:hint="Password"/>
 
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <TextView
-                    android:id="@+id/forgot_pass"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:text="Forgot password?" />
-            </RelativeLayout>
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_login"
+                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:textSize="16sp"
+                android:layout_height="match_parent"
                 android:text="Login"
                 android:textStyle="bold"
-                app:cornerRadius="5dp"/>
+                app:cornerRadius="10dp"
+                android:backgroundTint="#003580"
+                android:layout_margin="20dp"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_signup"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@color/my_primary"
-                app:strokeWidth="1dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Create an account!"
-                android:textStyle="bold"
-                app:cornerRadius="5dp" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Or Login with"
-                android:layout_gravity="center"
-                android:alpha="0.7"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <ImageView
-                    android:id="@+id/btnGoogleAuth"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="12dp"
-                    android:background="@drawable/google"/>
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="12dp"
-                    android:background="@drawable/facebook"/>
-            </LinearLayout>
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
