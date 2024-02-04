@@ -44,6 +44,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ff = FirebaseFirestore.getInstance(); // Initialize Firestore
 
+
         // Initialize your views
         home = view.findViewById(R.id.homecat);
         villa = view.findViewById(R.id.villacat);

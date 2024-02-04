@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.nesthub.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +24,7 @@ public class ProfileFragment extends Fragment {
 
     private TextView fullNameTextView;
     private TextView emailTextView;
+    private ShimmerFrameLayout shimmerFrameLayout;
 
     private FirebaseAuth mAuth;
     private FirebaseDatabase database;
@@ -34,6 +36,7 @@ public class ProfileFragment extends Fragment {
 
         fullNameTextView = view.findViewById(R.id.fullname);
         emailTextView = view.findViewById(R.id.email);
+        shimmerFrameLayout = view.findViewById(R.id.shimmerLayout);
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -50,6 +53,10 @@ public class ProfileFragment extends Fragment {
                     // Update TextViews with user data
                     fullNameTextView.setText(fullName);
                     emailTextView.setText(email);
+
+                    // Stop shimmer effect
+                    shimmerFrameLayout.stopShimmer();
+                    shimmerFrameLayout.setVisibility(View.GONE);
                 }
             }
 
@@ -60,5 +67,17 @@ public class ProfileFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        shimmerFrameLayout.startShimmer();
+    }
+
+    @Override
+    public void onPause() {
+        shimmerFrameLayout.stopShimmer();
+        super.onPause();
     }
 }

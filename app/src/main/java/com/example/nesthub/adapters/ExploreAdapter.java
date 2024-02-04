@@ -31,7 +31,7 @@ public class ExploreAdapter {
         this.recyclerView = recyclerView;
 
         this.houseModelList = new ArrayList<>();
-        this.catAdapter = new CatAdapter(context, houseModelList);
+        this.catAdapter = new CatAdapter(context, houseModelList, null);
 
         this.recyclerView.setLayoutManager(new LinearLayoutManager(context));
         this.recyclerView.setAdapter(catAdapter);
@@ -39,7 +39,11 @@ public class ExploreAdapter {
         this.ff = FirebaseFirestore.getInstance();
     }
 
-    public void fetchNestsData() {
+    public interface OnDataFetchCompleteListener {
+        void onDataFetchComplete();
+    }
+
+    public void fetchNestsData(final OnDataFetchCompleteListener listener) {
         ff.collection("Nests")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -52,6 +56,9 @@ public class ExploreAdapter {
                                 houseModelList.add(house);
                             }
                             catAdapter.notifyDataSetChanged();
+                            if (listener != null) {
+                                listener.onDataFetchComplete(); // Notify completion
+                            }
                         } else {
                             Toast.makeText(context, "Error fetching data", Toast.LENGTH_SHORT).show();
                         }

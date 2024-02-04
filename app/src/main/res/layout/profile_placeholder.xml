@@ -75,31 +75,20 @@
                     android:padding="10dp"
                     >
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/picPro"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:src="@drawable/raduisprofile"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
 
                     <TextView
                         android:id="@+id/fullname"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="80dp"
                         android:layout_marginTop="1dp"
-                        android:text="Abdellah Amraoui"
                         android:background="#ACACAC"
+                        android:text="Abdellah Amraoui"
                         android:textColor="#ACACAC"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/picPro"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.162" />
 
@@ -107,17 +96,17 @@
                         android:id="@+id/email"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginBottom="4dp"
-                        android:text="AbdellahAmraoui07@gmail.com"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="8dp"
 
+                        android:layout_marginBottom="4dp"
                         android:background="#ACACAC"
+                        android:text="AbdellahAmraoui07@gmail.com"
                         android:textColor="#ACACAC"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/picPro"
-                        app:layout_constraintTop_toBottomOf="@+id/fullname"
-                        />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fullname" />
 
                     <ImageView
                         android:id="@+id/flech2"

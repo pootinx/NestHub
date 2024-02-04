@@ -1,3 +1,4 @@
+// CatAdapter.java
 package com.example.nesthub.adapters;
 
 import android.content.Context;
@@ -14,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.nesthub.R;
-import com.example.nesthub.activities.CategoryActivity;
 import com.example.nesthub.activities.DetailsActivity;
 import com.example.nesthub.models.HouseModel;
 
@@ -22,26 +22,29 @@ import java.util.List;
 
 public class CatAdapter extends RecyclerView.Adapter<CatAdapter.ViewHolder> {
 
-
     Context context;
     List<HouseModel> houselist;
+    OnDataFetchCompleteListener onDataFetchCompleteListener;
 
-    public CatAdapter(Context context, List<HouseModel> houselist) {
-        this.context = context;
-        this.houselist = houselist;
+    public interface OnDataFetchCompleteListener {
+        void onDataFetchComplete();
     }
 
+    public CatAdapter(Context context, List<HouseModel> houselist, OnDataFetchCompleteListener listener) {
+        this.context = context;
+        this.houselist = houselist;
+        this.onDataFetchCompleteListener = listener;
+    }
 
     @NonNull
     @Override
     public CatAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new CatAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.cardhome_verticall,parent,false));
+        return new CatAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.cardhome_verticall, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull CatAdapter.ViewHolder holder, int position) {
-
-        String title,price,duration,location,description,availability,url_image;
+        String title, price, duration, location, description, availability, url_image;
         title = houselist.get(position).getTitle();
         availability = houselist.get(position).getAvailability();
         description = houselist.get(position).getDescription();
@@ -50,24 +53,18 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.ViewHolder> {
         url_image = houselist.get(position).getUrl_image();
         price = houselist.get(position).getPrice() + " MAD";
 
-
         Glide.with(context).load(houselist.get(position).getUrl_image()).into(holder.imageView);
         holder.title.setText(houselist.get(position).getTitle());
         holder.price.setText(price);
-//        holder.disponible.setText(houselist.get(position).getAvailability());
-//        holder.duration.setText(houselist.get(position).getDuration());
         holder.localisation.setText(houselist.get(position).getLocation());
 
-
-
-
-
-
+        if (position == getItemCount() - 1 && onDataFetchCompleteListener != null) {
+            onDataFetchCompleteListener.onDataFetchComplete();
+        }
 
         holder.cardclick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(context, DetailsActivity.class);
                 intent.putExtra("price", price);
                 intent.putExtra("title", title);
@@ -77,15 +74,10 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.ViewHolder> {
                 intent.putExtra("availability", availability);
                 intent.putExtra("url_image", url_image);
 
-
-
-
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -94,23 +86,19 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView availability,duration,localisation,price,title;
+        TextView availability, duration, localisation, price, title;
         ImageView imageView;
         ConstraintLayout cardclick;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            imageView = itemView.findViewById((R.id.imagecard));
-            localisation = itemView.findViewById((R.id.location));
-            price = itemView.findViewById((R.id.price));
-            title = itemView.findViewById((R.id.title));
-            availability = itemView.findViewById((R.id.availability));
-            duration = itemView.findViewById((R.id.duration));
-            cardclick = itemView.findViewById((R.id.cardclick));
-
-
-
+            imageView = itemView.findViewById(R.id.imagecard);
+            localisation = itemView.findViewById(R.id.location);
+            price = itemView.findViewById(R.id.price);
+            title = itemView.findViewById(R.id.title);
+            availability = itemView.findViewById(R.id.availability);
+            duration = itemView.findViewById(R.id.duration);
+            cardclick = itemView.findViewById(R.id.cardclick);
         }
     }
 }
